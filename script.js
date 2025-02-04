@@ -221,23 +221,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const navBar = document.createElement('div');
         navBar.className = 'mobile-nav-bar';
         navBar.innerHTML = `
-            <div class="d-flex justify-content-around align-items-center">
-                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#team-overview">
-                    <i class="fas fa-info-circle mb-1"></i>
-                    <small>Overview</small>
-                </button>
-                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
-                    <i class="fas fa-users mb-1"></i>
-                    <small>Attendees</small>
-                </button>
-                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#payment-forms">
-                    <i class="fas fa-file-invoice-dollar mb-1"></i>
-                    <small>Forms</small>
-                </button>
-                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#housing-food">
-                    <i class="fas fa-hotel mb-1"></i>
-                    <small>Housing</small>
-                </button>
+            <div class="mobile-nav-content">
+                <div class="d-flex justify-content-around align-items-center mb-2">
+                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#team-overview">
+                        <i class="fas fa-info-circle mb-1"></i>
+                        <small>Overview</small>
+                    </button>
+                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
+                        <i class="fas fa-users mb-1"></i>
+                        <small>Attendees</small>
+                    </button>
+                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#payment-forms">
+                        <i class="fas fa-file-invoice-dollar mb-1"></i>
+                        <small>Forms</small>
+                    </button>
+                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#housing-food">
+                        <i class="fas fa-hotel mb-1"></i>
+                        <small>Housing</small>
+                    </button>
+                </div>
+                <div class="social-links text-center pt-2 border-top">
+                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" onclick="event.preventDefault();" class="text-muted" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
             </div>
         `;
         document.body.appendChild(navBar);
