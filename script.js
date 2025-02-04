@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing theme toggle...');
     
+
+    function showPlaceholderPage(pageName) {
+        alert(pageName + " page is under construction.");
+    }
+
+    document.querySelectorAll(".btn-edit").forEach(button => {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            document.getElementById("editName").value = row.cells[1].innerText;
+            document.getElementById("editEmail").value = row.cells[2] ? row.cells[2].innerText : "";
+            new bootstrap.Modal(document.getElementById("editModal")).show();
+        });
+    });
+    
     // Initialize tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -147,27 +161,94 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialize mobile table stacking
+    const tables = document.querySelectorAll('.table');
+    tables.forEach(table => {
+        if (window.innerWidth <= 768) {
+            const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent);
+            table.querySelectorAll('tbody tr').forEach(row => {
+                row.querySelectorAll('td').forEach((cell, index) => {
+                    cell.setAttribute('data-label', headers[index]);
+                });
+            });
+            table.classList.add('table-mobile-stack');
+        }
+    });
+
+    // Mobile Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.mobile-accordion .card-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.closest('.card');
+            const wasActive = card.classList.contains('active');
+            
+            // Close all cards
+            document.querySelectorAll('.mobile-accordion .card').forEach(c => {
+                c.classList.remove('active');
+            });
+
+            // Open clicked card if it wasn't active
+            if (!wasActive) {
+                card.classList.add('active');
+                // Smooth scroll to card
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Add bottom navigation bar for mobile
+    if (window.innerWidth <= 768) {
+        const navBar = document.createElement('div');
+        navBar.className = 'mobile-nav-bar';
+        navBar.innerHTML = `
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-link" onclick="scrollToSection('team-overview')">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button class="btn btn-link" onclick="scrollToSection('attendees-checkin')">
+                    <i class="fas fa-users"></i>
+                </button>
+                <button class="btn btn-link" onclick="scrollToSection('payment-forms')">
+                    <i class="fas fa-file-alt"></i>
+                </button>
+                <button class="btn btn-link" onclick="scrollToSection('housing-food')">
+                    <i class="fas fa-bed"></i>
+                </button>
+            </div>
+        `;
+        document.body.appendChild(navBar);
+    }
+
+    // Add floating action button for quick actions
+    const fab = document.createElement('button');
+    fab.className = 'fab';
+    fab.innerHTML = '<i class="fas fa-plus"></i>';
+    fab.addEventListener('click', showQuickActions);
+    document.body.appendChild(fab);
+
 });
 
 // Toast notification
-function showToast(message) {
-    const toastContainer = document.createElement('div');
-    toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
-    toastContainer.style.zIndex = '11';
-    
-    const toastHTML = `
-        <div class="toast show" role="alert">
-            <div class="toast-body">
-                ${message}
-            </div>
+function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type} show`;
+    toast.innerHTML = `
+        <div class="toast-body">
+            ${message}
         </div>
     `;
-    
-    toastContainer.innerHTML = toastHTML;
-    document.body.appendChild(toastContainer);
-    
+
+    const container = document.querySelector('.toast-container') || (() => {
+        const c = document.createElement('div');
+        c.className = 'toast-container';
+        document.body.appendChild(c);
+        return c;
+    })();
+
+    container.appendChild(toast);
     setTimeout(() => {
-        toastContainer.remove();
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
 
@@ -183,4 +264,47 @@ function updateThemeIcon(theme) {
         metaThemeColor.setAttribute('content', 
             theme === 'dark' ? '#212529' : '#ffffff');
     }
+}
+
+// Helper Functions
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function showQuickActions() {
+    // Create and show a bottom sheet with quick actions
+    const actions = [
+        { icon: 'plus-circle', text: 'Add Participant', action: () => {} },
+        { icon: 'envelope', text: 'Send Forms', action: () => {} },
+        { icon: 'question-circle', text: 'Get Help', action: () => {} }
+    ];
+
+    const sheet = document.createElement('div');
+    sheet.className = 'bottom-sheet';
+    sheet.innerHTML = `
+        <div class="bottom-sheet-content">
+            <h5>Quick Actions</h5>
+            <div class="list-group">
+                ${actions.map(action => `
+                    <button class="list-group-item list-group-item-action">
+                        <i class="fas fa-${action.icon} me-2"></i>
+                        ${action.text}
+                    </button>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(sheet);
+    setTimeout(() => sheet.classList.add('show'), 10);
+
+    sheet.addEventListener('click', (e) => {
+        if (e.target === sheet) {
+            sheet.classList.remove('show');
+            setTimeout(() => sheet.remove(), 300);
+        }
+    });
 }
