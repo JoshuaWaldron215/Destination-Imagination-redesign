@@ -223,19 +223,19 @@ document.addEventListener('DOMContentLoaded', function() {
         navBar.innerHTML = `
             <div class="mobile-nav-content">
                 <div class="d-flex justify-content-around align-items-center mb-2">
-                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#team-overview">
+                    <button class="btn btn-link d-flex flex-column align-items-center" onclick="switchTab('team-overview')">
                         <i class="fas fa-info-circle mb-1"></i>
                         <small>Overview</small>
                     </button>
-                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
+                    <button class="btn btn-link d-flex flex-column align-items-center" onclick="switchTab('attendees-checkin')">
                         <i class="fas fa-users mb-1"></i>
                         <small>Attendees</small>
                     </button>
-                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#payment-forms">
+                    <button class="btn btn-link d-flex flex-column align-items-center" onclick="switchTab('payment-forms')">
                         <i class="fas fa-file-invoice-dollar mb-1"></i>
                         <small>Forms</small>
                     </button>
-                    <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#housing-food">
+                    <button class="btn btn-link d-flex flex-column align-items-center" onclick="switchTab('housing-food')">
                         <i class="fas fa-hotel mb-1"></i>
                         <small>Housing</small>
                     </button>
@@ -250,25 +250,34 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.body.appendChild(navBar);
 
-        // Add active state handling for mobile navigation
-        const mobileNavButtons = document.querySelectorAll('.mobile-nav-bar .btn-link');
-        mobileNavButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                mobileNavButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+        // Add this function to handle tab switching
+        window.switchTab = function(tabId) {
+            // Remove active class from all tabs and panes
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('show', 'active');
             });
-        });
+            document.querySelectorAll('.nav-tabs .nav-link').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.mobile-nav-bar .btn-link').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Activate the selected tab and pane
+            const selectedPane = document.getElementById(tabId);
+            const selectedTab = document.querySelector(`[data-bs-target="#${tabId}"]`);
+            const selectedMobileBtn = document.querySelector(`.mobile-nav-bar .btn-link[onclick*="${tabId}"]`);
+
+            if (selectedPane) selectedPane.classList.add('show', 'active');
+            if (selectedTab) selectedTab.classList.add('active');
+            if (selectedMobileBtn) selectedMobileBtn.classList.add('active');
+        };
 
         // Set initial active state
         const initialActiveTab = document.querySelector('.nav-tabs .active');
         if (initialActiveTab) {
-            const targetId = initialActiveTab.getAttribute('data-bs-target');
-            const correspondingMobileButton = document.querySelector(`.mobile-nav-bar [data-bs-target="${targetId}"]`);
-            if (correspondingMobileButton) {
-                correspondingMobileButton.classList.add('active');
-            }
+            const targetId = initialActiveTab.getAttribute('data-bs-target').substring(1);
+            switchTab(targetId);
         }
     }
 
