@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Finals 2024 - Team Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Make tabs scrollable */
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+        }
+        
+        .nav-tabs .nav-item {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="DESTINATION-IMAGINATION.png" alt="DI Events" height="40">
+                Global Finals 2024
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Team Header -->
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h2 class="card-title">Team Registration: (127-36892) 7 Kids and a TM</h2>
+                <h4 class="card-subtitle text-muted">What's The First Rule Of DI?</h4>
+            </div>
+        </div>
+
+        <!-- Optimized Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4" id="registrationTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#team-overview">Team Overview</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendees-checkin">Attendees & Check-in</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Requests">Requests</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#payment-forms">Payment & Forms</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#housing-food">Housing & Food</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#finalize-registration">Register</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="team-overview">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">This is the information we have on file for your team. If you need to make changes, click the Modify Button</h5>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">Organization:</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-plaintext">7 Kids and a TM</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">Team Name:</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-plaintext">What's The First Rule Of DI?</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">From:</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-plaintext">Morganton</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">Team Challenge:</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-plaintext">In Motion</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">Team Level:</label>
+                                    <div class="col-sm-8">
+                                        <p class="form-control-plaintext">Secondary</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-4 col-form-label">Native Language:</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select">
+                                            <option value="en" selected>English</option>
+                                            <option value="es">Spanish</option>
+                                            <option value="fr">French</option>
+                                            <option value="de">German</option>
+                                            <option value="zh">Chinese</option>
+                                            <option value="ja">Japanese</option>
+                                            <option value="ko">Korean</option>
+                                            <option value="pt">Portuguese</option>
+                                            <option value="ru">Russian</option>
+                                            <option value="ar">Arabic</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-edit"></i> Modify
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h5 class="mb-4">Important Terms</h5>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pinGuidelines">
+                                    <label class="form-check-label" for="pinGuidelines">
+                                        I have read and understood the guidelines for creating pins that are in compliance with copyright and trademark laws. Anyone trading pins that may infringe on intellectual property may be asked to put them away. <a href="#">Click Here</a> to read the guidelines.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="refundPolicy">
+                                    <label class="form-check-label" for="refundPolicy">
+                                        I have read and understood the cancellations and refunds policy for Global Finals. <a href="#">Click Here</a> to read the policy.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="covidPolicy">
+                                    <label class="form-check-label" for="covidPolicy">
+                                        By checking this box, you acknowledge that Destination Imagination, Inc., will not refund any amounts paid to attend Global Finals 2024 for any reason, including exclusion from the Event for failure to follow protocols. Destination Imagination, Inc., will not reimburse any expenses incurred by any attendee relating to COVID-19 testing, isolation or quarantining. (For more information on cancellation, please <a href="#">Click Here</a>)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show active" id="attendees-checkin">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">Attendees & Check-in</h5>
+                        
+                        <!-- Team Managers Section -->
+                        <h6>Team Manager(s)</h6>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Participate</th>
+                                        <th>Name</th>
+                                        <th>Pronouns</th>
+                                        <th>First Year of DI?</th>
+                                        <th>First GF?</th>
+                                        <th>DI Alum?</th>
+                                        <th>Certification Courses</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" checked></td>
+                                        <td>Michael McQuaid</td>
+                                        <td>He/him</td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary mt-2">Add/Edit</button>
+                        </div>
+                        
+                        <!-- Participants Section -->
+                        <h6>Participants</h6>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Participate</th>
+                                        <th>Name</th>
+                                        <th>Pronouns</th>
+                                        <th>Age</th>
+                                        <th>First Year of DI?</th>
+                                        <th>First GF?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" checked></td>
+                                        <td>Cache Hickman</td>
+                                        <td>He/him</td>
+                                        <td>17 yrs</td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" checked></td>
+                                        <td>Haven Edwards</td>
+                                        <td>She/her</td>
+                                        <td>15 yrs</td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary mt-2">Add/Edit</button>
+                        </div>
+                        
+                        <!-- Spectators Section -->
+                        <h6>Spectator(s)</h6>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Pronouns</th>
+                                        <th>Age</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Elizabeth McQuaid</td>
+                                        <td>
+                                            <select class="form-select">
+                                                <option>I prefer not to answer</option>
+                                            </select>
+                                        </td>
+                                        <td>Over 18</td>
+                                        <td><button class="btn btn-danger btn-sm">&times;</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary mt-2">Add/Edit</button>
+                        </div>
+                        <!-- Check-in Status & QR Code -->
+                        <div class="mt-4">
+                            <h6>Check-in Status</h6>
+                            <p><strong>3 out of 6 members checked in.</strong></p>
+                            <button class="btn btn-success">Check-in Now</button>
+                            <div class="mt-3 text-center">
+                                <h6>QR Code for Check-in</h6>
+                                <img src="QR.png" alt="Check-in QR Code" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Requests">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">Requests</h5>
+                        <p>Submit and track any special requests.</p>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Housing Near Team XYZ</span>
+                                <strong class="text-warning">Pending</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Late Arrival Scheduling</span>
+                                <strong class="text-danger">Denied</strong>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary">Submit New Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade show active" id="payment-forms">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">Payment & Forms</h5>
+                        
+                        <!-- Forms & Digital Consent Section -->
+                        <h6>Team Manager Forms</h6>
+                        <p>Please ensure all digital consent forms are signed by team managers.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email Address</th>
+                                        <th>Form Status</th>
+                                        <th>Send Forms</th>
+                                        <th>Copy Form Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Michael McQuaid</td>
+                                        <td><input type="email" class="form-control" value="mmcquaid@wearedi.cc"></td>
+                                        <td><span class="badge bg-success">Signed</span></td>
+                                        <td><button class="btn btn-primary btn-sm">Send Email</button></td>
+                                        <td><button class="btn btn-secondary btn-sm">Copy to Clipboard</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h6 class="mt-4">Participant Forms</h6>
+                        <p>All participants must have their forms signed before the event.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email Address</th>
+                                        <th>Form Status</th>
+                                        <th>Send Forms</th>
+                                        <th>Copy Form Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cache Hickman</td>
+                                        <td><input type="email" class="form-control" value="caautumntner@gmail.co"></td>
+                                        <td><span class="badge bg-success">Signed</span></td>
+                                        <td><button class="btn btn-primary btn-sm">Send Email</button></td>
+                                        <td><button class="btn btn-secondary btn-sm">Copy to Clipboard</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eshaan Garg</td>
+                                        <td><input type="email" class="form-control" value=""></td>
+                                        <td><span class="badge bg-danger">Not Signed</span></td>
+                                        <td><button class="btn btn-primary btn-sm">Send Email</button></td>
+                                        <td><button class="btn btn-secondary btn-sm">Copy to Clipboard</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h6 class="mt-4">Spectator Forms</h6>
+                        <p>Spectators are required to sign digital forms where applicable.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email Address</th>
+                                        <th>Form Status</th>
+                                        <th>Send Forms</th>
+                                        <th>Copy Form Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Avini Bansal</td>
+                                        <td><input type="email" class="form-control" value=""></td>
+                                        <td><span class="badge bg-danger">Not Signed</span></td>
+                                        <td><button class="btn btn-primary btn-sm">Send Email</button></td>
+                                        <td><button class="btn btn-secondary btn-sm">Copy to Clipboard</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Payment Summary Section -->
+                        <h6 class="mt-4">Payment Summary</h6>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Registration Fee</span>
+                                <strong>$200</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Housing & Food</span>
+                                <strong>$500</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Special Requests</span>
+                                <strong>$100</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between bg-light">
+                                <span class="fw-bold">Total Balance Due</span>
+                                <strong class="text-danger">$800</strong>
+                            </li>
+                        </ul>
+                        
+                        <!-- Payment Actions -->
+                        <div class="text-center">
+                            <button class="btn btn-success">Make Payment</button>
+                            <button class="btn btn-outline-secondary">Download Receipt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="housing-food">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">Housing & Food</h5>
+                        <h6>Housing Details</h6>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Assigned Hotel</span>
+                                <strong>Grand Hotel</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Check-in Date</span>
+                                <strong>May 20, 2024</strong>
+                            </li>
+                        </ul>
+                        <h6>Meal Plan</h6>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Vegetarian</span>
+                                <strong>2 Members</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Regular</span>
+                                <strong>5 Members</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="finalize-registration">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-4">Finalize Registration</h5>
+                        <p>Review and submit your final registration details.</p>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Forms Completed</span>
+                                <strong class="text-success">Yes</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Payment Made</span>
+                                <strong class="text-danger">No</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Housing Confirmed</span>
+                                <strong class="text-success">Yes</strong>
+                            </li>
+                        </ul>
+                        <button class="btn btn-success">Submit Registration</button>
+                        <button class="btn btn-outline-secondary">Download Summary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light text-center">
+        <div class="container">
+            <span class="text-muted">©2024 • Destination Imagination®</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
