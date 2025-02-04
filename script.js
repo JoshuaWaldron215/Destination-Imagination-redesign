@@ -196,22 +196,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add bottom navigation bar for mobile
+    // Fix tab content visibility
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    tabPanes.forEach(pane => {
+        // Remove all 'show active' classes initially
+        pane.classList.remove('show', 'active');
+    });
+    
+    // Set only the first tab as active
+    const firstTab = document.querySelector('#team-overview');
+    if (firstTab) {
+        firstTab.classList.add('show', 'active');
+    }
+
+    // Simplify mobile navigation - remove redundant elements
     if (window.innerWidth <= 768) {
+        // Remove floating action button
+        const existingFab = document.querySelector('.fab');
+        if (existingFab) {
+            existingFab.remove();
+        }
+
+        // Simplify mobile nav bar
         const navBar = document.createElement('div');
         navBar.className = 'mobile-nav-bar';
         navBar.innerHTML = `
             <div class="d-flex justify-content-around">
-                <button class="btn btn-link" onclick="scrollToSection('team-overview')">
+                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#team-overview">
                     <i class="fas fa-home"></i>
                 </button>
-                <button class="btn btn-link" onclick="scrollToSection('attendees-checkin')">
+                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
                     <i class="fas fa-users"></i>
                 </button>
-                <button class="btn btn-link" onclick="scrollToSection('payment-forms')">
+                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#payment-forms">
                     <i class="fas fa-file-alt"></i>
                 </button>
-                <button class="btn btn-link" onclick="scrollToSection('housing-food')">
+                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#housing-food">
                     <i class="fas fa-bed"></i>
                 </button>
             </div>
@@ -219,36 +239,33 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(navBar);
     }
 
-    // Add floating action button for quick actions
-    const fab = document.createElement('button');
-    fab.className = 'fab';
-    fab.innerHTML = '<i class="fas fa-plus"></i>';
-    fab.addEventListener('click', showQuickActions);
-    document.body.appendChild(fab);
-
+    // Remove showQuickActions function call
+    const fab = document.querySelector('.fab');
+    if (fab) {
+        fab.removeEventListener('click', showQuickActions);
+        fab.remove();
+    }
 });
 
 // Toast notification
-function showToast(message, type = 'info') {
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type} show`;
-    toast.innerHTML = `
-        <div class="toast-body">
-            ${message}
+function showToast(message) {
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
+    toastContainer.style.zIndex = '11';
+    
+    const toastHTML = `
+        <div class="toast show" role="alert">
+            <div class="toast-body">
+                ${message}
+            </div>
         </div>
     `;
-
-    const container = document.querySelector('.toast-container') || (() => {
-        const c = document.createElement('div');
-        c.className = 'toast-container';
-        document.body.appendChild(c);
-        return c;
-    })();
-
-    container.appendChild(toast);
+    
+    toastContainer.innerHTML = toastHTML;
+    document.body.appendChild(toastContainer);
+    
     setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
+        toastContainer.remove();
     }, 3000);
 }
 
@@ -264,47 +281,4 @@ function updateThemeIcon(theme) {
         metaThemeColor.setAttribute('content', 
             theme === 'dark' ? '#212529' : '#ffffff');
     }
-}
-
-// Helper Functions
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-function showQuickActions() {
-    // Create and show a bottom sheet with quick actions
-    const actions = [
-        { icon: 'plus-circle', text: 'Add Participant', action: () => {} },
-        { icon: 'envelope', text: 'Send Forms', action: () => {} },
-        { icon: 'question-circle', text: 'Get Help', action: () => {} }
-    ];
-
-    const sheet = document.createElement('div');
-    sheet.className = 'bottom-sheet';
-    sheet.innerHTML = `
-        <div class="bottom-sheet-content">
-            <h5>Quick Actions</h5>
-            <div class="list-group">
-                ${actions.map(action => `
-                    <button class="list-group-item list-group-item-action">
-                        <i class="fas fa-${action.icon} me-2"></i>
-                        ${action.text}
-                    </button>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    document.body.appendChild(sheet);
-    setTimeout(() => sheet.classList.add('show'), 10);
-
-    sheet.addEventListener('click', (e) => {
-        if (e.target === sheet) {
-            sheet.classList.remove('show');
-            setTimeout(() => sheet.remove(), 300);
-        }
-    });
 }
