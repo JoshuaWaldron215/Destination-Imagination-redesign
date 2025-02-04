@@ -211,28 +211,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Simplify mobile navigation - remove redundant elements
     if (window.innerWidth <= 768) {
-        // Remove floating action button
+        // Remove floating action button if it exists
         const existingFab = document.querySelector('.fab');
         if (existingFab) {
             existingFab.remove();
         }
 
-        // Simplify mobile nav bar
+        // Create mobile navigation with labels
         const navBar = document.createElement('div');
         navBar.className = 'mobile-nav-bar';
         navBar.innerHTML = `
-            <div class="d-flex justify-content-around">
-                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#team-overview">
-                    <i class="fas fa-home"></i>
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#team-overview">
+                    <i class="fas fa-info-circle mb-1"></i>
+                    <small>Overview</small>
                 </button>
-                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
-                    <i class="fas fa-users"></i>
+                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#attendees-checkin">
+                    <i class="fas fa-users mb-1"></i>
+                    <small>Attendees</small>
                 </button>
-                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#payment-forms">
-                    <i class="fas fa-file-alt"></i>
+                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#payment-forms">
+                    <i class="fas fa-file-invoice-dollar mb-1"></i>
+                    <small>Forms</small>
                 </button>
-                <button class="btn btn-link" data-bs-toggle="tab" data-bs-target="#housing-food">
-                    <i class="fas fa-bed"></i>
+                <button class="btn btn-link d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="#housing-food">
+                    <i class="fas fa-hotel mb-1"></i>
+                    <small>Housing</small>
                 </button>
             </div>
         `;
