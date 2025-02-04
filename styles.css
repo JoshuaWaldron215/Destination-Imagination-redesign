@@ -14,11 +14,13 @@ body {
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #dee2e6;
-    gap: 0.25rem;
-    background-color: #f8f9fa;
-    padding: 0.5rem 0.5rem 0;
-    border-radius: 0.375rem 0.375rem 0 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.nav-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-tabs .nav-link {
@@ -142,7 +144,9 @@ body {
 }
 
 .form-check {
-    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .form-check-input:checked {
@@ -324,10 +328,12 @@ body {
 
     /* Make buttons more touch-friendly */
     .btn {
-        padding: 0.75rem 1rem;
-        min-height: 44px;
-        margin: 0.25rem 0;
+        white-space: nowrap;
+        padding: 10px 15px;
+        font-size: 14px;
+        text-align: center;
     }
+    
 
     /* Improve form controls on mobile */
     .form-control, .form-select {
@@ -645,8 +651,20 @@ body {
 
 /* Mobile-friendly Cards */
 @media (max-width: 768px) {
-    .card {
-        margin-bottom: 1rem;
+    @media (max-width: 768px) {
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+    
+        input, select {
+            width: 100%;
+        }
+    
+        .table-responsive {
+            overflow-x: auto;
+        }
     }
 
     .card-body {
