@@ -242,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="social-links text-center pt-2 border-top">
                     <a href="https://www.linkedin.com/company/destination-imagination/" target="_blank" class="text-muted me-3" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/user/DestinationImagination" target="_blank" class="text-muted me-3" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://twitter.com/dihq" target="_blank" class="text-muted me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.pinterest.com/DIheadquarters/" target="_blank" class="text-muted" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/user/DIGlobalFinals" target="_blank" class="text-muted me-3" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/idodi" target="_blank" class="text-muted me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.pinterest.com/boxandball/" target="_blank" class="text-muted" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
         `;
