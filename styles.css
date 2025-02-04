@@ -651,27 +651,62 @@ body {
 
 /* Mobile-friendly Cards */
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
-    
-        input, select {
-            width: 100%;
-        }
-    
-        .table-responsive {
-            overflow-x: auto;
-        }
+    /* Stack labels above inputs */
+    .form-group, .row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .card-body {
-        padding: 1rem;
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
     }
 
-    .card-footer {
-        padding: 1rem;
+    input, select, textarea {
+        width: 100%;
+    }
+
+    /* Fix button text overlap */
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    /* Make tables responsive */
+    .table-responsive {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        text-align: left;
+        font-weight: bold;
     }
 }
