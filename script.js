@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
             existingFab.remove();
         }
 
-        // Create mobile navigation with labels
+        // Create mobile navigation with labels and functional links
         const navBar = document.createElement('div');
         navBar.className = 'mobile-nav-bar';
         navBar.innerHTML = `
@@ -241,14 +241,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     </button>
                 </div>
                 <div class="social-links text-center pt-2 border-top">
-                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" onclick="event.preventDefault();" class="text-muted me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" onclick="event.preventDefault();" class="text-muted" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.linkedin.com/company/destination-imagination/" target="_blank" class="text-muted me-3" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/user/DestinationImagination" target="_blank" class="text-muted me-3" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://twitter.com/dihq" target="_blank" class="text-muted me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.pinterest.com/DIheadquarters/" target="_blank" class="text-muted" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
         `;
         document.body.appendChild(navBar);
+
+        // Add active state handling for mobile navigation
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-bar .btn-link');
+        mobileNavButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                mobileNavButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+            });
+        });
+
+        // Set initial active state
+        const initialActiveTab = document.querySelector('.nav-tabs .active');
+        if (initialActiveTab) {
+            const targetId = initialActiveTab.getAttribute('data-bs-target');
+            const correspondingMobileButton = document.querySelector(`.mobile-nav-bar [data-bs-target="${targetId}"]`);
+            if (correspondingMobileButton) {
+                correspondingMobileButton.classList.add('active');
+            }
+        }
     }
 
     // Remove floating action button if it exists
