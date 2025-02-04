@@ -251,11 +251,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(navBar);
     }
 
-    // Remove showQuickActions function call
+    // Remove floating action button if it exists
     const fab = document.querySelector('.fab');
     if (fab) {
         fab.removeEventListener('click', showQuickActions);
         fab.remove();
+    }
+
+    // Remove showQuickActions function call
+    const existingFab = document.querySelector('.fab');
+    if (existingFab) {
+        existingFab.remove();
     }
 });
 

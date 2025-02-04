@@ -674,23 +674,6 @@ body {
         padding: 0.75rem 1rem;
     }
 
-    /* Floating Action Button */
-    .fab {
-        position: fixed;
-        bottom: 5rem;
-        right: 1rem;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: var(--di-purple);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,.2);
-        z-index: 1020;
-    }
-
     /* Toast Notifications */
     .toast-container {
         position: fixed;
