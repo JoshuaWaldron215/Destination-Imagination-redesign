@@ -293,6 +293,99 @@ document.addEventListener('DOMContentLoaded', function() {
     if (existingFab) {
         existingFab.remove();
     }
+
+    // Initialize status counters
+    const statusCounts = {
+        all: { total: 15, checked: 7, forms: 12, badges: 5 },
+        managers: { total: 1, checked: 1, forms: 1, badges: 1 },
+        participants: { total: 6, checked: 4, forms: 5, badges: 2 },
+        spectators: { total: 8, checked: 2, forms: 6, badges: 2 }
+    };
+
+    // Initialize Bootstrap modal
+    const addMemberModal = new bootstrap.Modal(document.getElementById('addMemberModal'));
+    
+    // Add click handlers to category items
+    document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const category = this.dataset.category;
+            const categoryName = this.querySelector('.category-name').textContent;
+            showCategoryContent(category, categoryName);
+        });
+    });
+
+    function showCategoryContent(category, categoryName) {
+        // Hide category list and show content
+        document.querySelector('.category-list').style.display = 'none';
+        const contentDiv = document.getElementById('category-content');
+        contentDiv.style.display = 'block';
+
+        // Update title
+        document.querySelector('.category-title').textContent = categoryName;
+
+        // Get and display members
+        const members = getMembersByCategory(category);
+        displayMembers(members, category);
+    }
+
+    function displayMembers(members, category) {
+        const memberList = document.querySelector('.member-list');
+        memberList.innerHTML = members.map(member => `
+            <div class="member-card">
+                <button class="remove-btn" onclick="removeMember('${member.id}')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="member-info">
+                    <h6>${member.name}</h6>
+                    <span class="role-badge ${member.role.toLowerCase()}">${member.role}</span>
+                </div>
+                <div class="member-status">
+                    ${getStatusBadges(member.status)}
+                </div>
+                <div class="member-actions">
+                    <button class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-envelope"></i>
+                        <span class="btn-text">Send Forms</span>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-print"></i>
+                        <span class="btn-text">Print Badge</span>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Helper function to generate status badges
+    function getStatusBadges(status) {
+        return `
+            <span class="badge ${status.checkedIn ? 'bg-success' : 'bg-secondary'}">
+                ${status.checkedIn ? 'Checked In' : 'Not Checked In'}
+            </span>
+            <span class="badge ${status.formsComplete ? 'bg-success' : 'bg-warning'}">
+                ${status.formsComplete ? 'Forms Complete' : 'Forms Pending'}
+            </span>
+        `;
+    }
+
+    // Back button handler
+    document.querySelector('.back-button').addEventListener('click', function() {
+        document.querySelector('.category-list').style.display = 'block';
+        document.getElementById('category-content').style.display = 'none';
+    });
+
+    // Add member button handler
+    document.querySelector('.add-member-btn').addEventListener('click', function() {
+        addMemberModal.show();
+    });
+
+    // Remove member function
+    window.removeMember = function(memberId) {
+        if (confirm('Are you sure you want to remove this member?')) {
+            // Add removal logic here
+            console.log('Removing member:', memberId);
+        }
+    };
 });
 
 // Toast notification
