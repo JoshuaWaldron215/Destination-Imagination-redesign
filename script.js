@@ -1,6 +1,433 @@
+// Move memberData to the top level and make it a global variable
+window.memberData = {
+    managers: [
+        {
+            name: 'Michael McQuaid',
+            email: 'mmcquaid@wearenedi.com',
+            status: 'signed',
+            details: {
+                pronouns: 'He/him',
+                firstYearDI: 'No',
+                firstGF: 'No',
+                DIAlum: 'Yes',
+                certification: 'Yes',
+                teamNumber: '1',
+                role: 'Team Manager'
+            }
+        }
+    ],
+    participants: [
+        {
+            name: 'Cache Hickman',
+            email: 'cautumnturner@gmail.com',
+            status: 'signed',
+            details: {
+                pronouns: 'He/him',
+                age: '17 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        },
+        {
+            name: 'Haven Edwards',
+            email: 'Donniealane@gmail.com',
+            status: 'signed',
+            details: {
+                pronouns: 'She/her',
+                age: '15 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        },
+        {
+            name: 'Nancy Carol McQuaid',
+            email: 'mmcquaid74@gmail.com',
+            status: 'signed',
+            details: {
+                pronouns: 'She/her',
+                age: '15 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        },
+        {
+            name: 'Kendall Ingram',
+            email: 'amyingram.m@outlook.com',
+            status: 'signed',
+            details: {
+                pronouns: 'She/her',
+                age: '15 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        },
+        {
+            name: 'Emmaline Phipps',
+            email: 'ephipps607@burke.k12.nc.us',
+            status: 'signed',
+            details: {
+                pronouns: 'She/her',
+                age: '17 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        },
+        {
+            name: 'Sophie Moseley',
+            email: 'ljmoseley@charter.net',
+            status: 'signed',
+            details: {
+                pronouns: 'They/them',
+                age: '16 yrs',
+                firstYearDI: 'No',
+                firstGF: 'Yes',
+                role: 'Participant'
+            }
+        }
+    ],
+    spectators: [
+        {
+            name: 'Elizabeth McQuaid',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Amy Ingram',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Paris Turner',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Donnie Edwards',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Carl Edwards',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Autumn Turner',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Pallavi Garg',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        },
+        {
+            name: 'Virendra Garg',
+            email: '',
+            status: 'signed',
+            details: {
+                pronouns: 'I prefer not to answer',
+                age: 'over 18',
+                role: 'Spectator'
+            }
+        }
+    ]
+};
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Initializing theme toggle...');
-    
+    console.log('Script initialized');
+
+    // Initialize data
+    const memberData = {
+        all: [],
+        managers: [
+            {
+                name: 'Michael McQuaid',
+                email: 'mmcquaid@wearenedi.com',
+                status: 'signed',
+                lastUpdated: '2024-03-20',
+                details: {
+                    pronouns: 'He/him',
+                    firstYearDI: 'No',
+                    firstGF: 'No',
+                    DIAlum: 'Yes',
+                    certification: 'Yes',
+                    teamNumber: '1',
+                    role: 'Team Manager'
+                }
+            }
+        ],
+        participants: [
+            {
+                name: 'Cache Hickman',
+                email: 'cautumnturner@gmail.com',
+                status: 'signed',
+                lastUpdated: '2024-03-19',
+                details: {
+                    pronouns: 'He/him',
+                    age: '17 yrs',
+                    firstYearDI: 'No',
+                    firstGF: 'Yes',
+                    role: 'Participant'
+                }
+            },
+            {
+                name: 'Haven Edwards',
+                email: 'Donniealane@gmail.com',
+                status: 'signed'
+            },
+            {
+                name: 'Nancy Carol McQuaid',
+                email: 'mmcquaid74@gmail.com',
+                status: 'signed'
+            },
+            {
+                name: 'Kendall Ingram',
+                email: 'amyingram.m@outlook.com',
+                status: 'signed'
+            },
+            {
+                name: 'Emmaline Phipps',
+                email: 'ephipps607@burke.k12.nc.us',
+                status: 'signed'
+            },
+            {
+                name: 'Sophie Moseley',
+                email: 'ljmoseley@charter.net',
+                status: 'signed'
+            }
+        ],
+        spectators: [
+            {
+                name: 'Elizabeth McQuaid',
+                email: '',
+                status: 'signed',
+                lastUpdated: '2024-03-18',
+                details: {
+                    pronouns: 'I prefer not to answer',
+                    age: 'over 18',
+                    role: 'Spectator'
+                }
+            },
+            {
+                name: 'Amy Ingram',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Paris Turner',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Donnie Edwards',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Carl Edwards',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Autumn Turner',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Pallavi Garg',
+                email: '',
+                status: 'signed'
+            },
+            {
+                name: 'Virendra Garg',
+                email: '',
+                status: 'signed'
+            }
+        ]
+    };
+
+    // Populate 'all' category
+    memberData.all = [
+        ...memberData.managers,
+        ...memberData.participants,
+        ...memberData.spectators
+    ];
+
+    // Initialize category click handlers
+    initializeCategoryHandlers();
+
+    function initializeCategoryHandlers() {
+        const categoryItems = document.querySelectorAll('.category-item');
+        console.log('Found category items:', categoryItems.length);
+
+        categoryItems.forEach(item => {
+            item.addEventListener('click', handleCategoryClick);
+        });
+    }
+
+    function handleCategoryClick(e) {
+        // Don't trigger if clicking buttons
+        if (e.target.closest('.add-btn') || e.target.closest('.remove-category-btn')) {
+            return;
+        }
+
+        const category = this.dataset.category;
+        const categoryName = this.querySelector('.category-name').textContent;
+        console.log('Category clicked:', category);
+        showCategoryContent(category, categoryName);
+    }
+
+    function showCategoryContent(category, categoryName) {
+        const categoryList = document.querySelector('.category-list');
+        const categoryContent = document.getElementById('category-content');
+
+        if (!categoryContent) {
+            console.error('Category content container not found');
+            return;
+        }
+
+        // Hide list, show content
+        categoryList.style.display = 'none';
+        categoryContent.style.display = 'block';
+
+        // Update content
+        categoryContent.innerHTML = createCategoryContent(categoryName, category);
+
+        // Add back button handler
+        const backButton = categoryContent.querySelector('.back-button');
+        backButton.addEventListener('click', () => {
+            categoryList.style.display = 'block';
+            categoryContent.style.display = 'none';
+        });
+
+        // Populate member list
+        const memberList = categoryContent.querySelector('.member-list');
+        const members = memberData[category] || [];
+        members.forEach(member => {
+            memberList.innerHTML += createMemberRow(member);
+        });
+    }
+
+    function createCategoryContent(categoryName, category) {
+        return `
+            <div class="content-header">
+                <div class="header-left">
+                    <button class="btn btn-link back-button">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <h5 class="category-title">${categoryName}</h5>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary action-btn" title="Add Member">
+                        <i class="fas fa-plus"></i>
+                        <span class="sr-only">Add</span>
+                    </button>
+                    <button class="btn btn-outline-danger action-btn" title="Remove ">
+                        <i class="fas fa-times"></i>
+                        <span class="sr-only">Remove </span>
+                    </button>
+                </div>
+            </div>
+            <div class="member-list-container">
+                <div class="member-table-header">
+                    <div class="header-name">Name</div>
+                    <div class="header-email">Email Address</div>
+                    <div class="header-status">Status</div>
+                    <div class="header-actions">Actions</div>
+                </div>
+                <div class="member-list">
+                </div>
+            </div>
+        `;
+    }
+
+    function createMemberRow(member) {
+        const memberId = member.name.replace(/\s+/g, '-').toLowerCase();
+        return `
+            <div class="member-row">
+                <div class="member-info">
+                    <div class="member-checkbox">
+                        <input type="checkbox" ${member.status === 'signed' ? 'checked' : ''} id="member-${memberId}">
+                    </div>
+                    <div class="member-name-container">
+                        <span class="member-name-text" onclick="showMemberDetails('${member.name}')">${member.name}</span>
+                    </div>
+                </div>
+                <div class="member-email">
+                    <div class="input-group">
+                        <input type="email" 
+                               class="form-control form-control-sm" 
+                               id="email-${memberId}"
+                               name="email-${memberId}"
+                               value="${member.email}" 
+                               placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="form-status ${member.status}">
+                    <i class="fas ${member.status === 'signed' ? 'fa-check-circle' : 'fa-clock'}"></i>
+                    ${member.status === 'signed' ? 'Signed' : 'Pending'}
+                </div>
+                <div class="member-actions">
+                    <button class="btn btn-primary action-btn" title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary action-btn" title="Copy Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric' 
+        });
+    }
 
     function showPlaceholderPage(pageName) {
         alert(pageName + " page is under construction.");
@@ -304,88 +731,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Bootstrap modal
     const addMemberModal = new bootstrap.Modal(document.getElementById('addMemberModal'));
-    
-    // Add click handlers to category items
-    document.querySelectorAll('.category-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const category = this.dataset.category;
-            const categoryName = this.querySelector('.category-name').textContent;
-            showCategoryContent(category, categoryName);
-        });
-    });
 
-    function showCategoryContent(category, categoryName) {
-        // Hide category list and show content
-        document.querySelector('.category-list').style.display = 'none';
-        const contentDiv = document.getElementById('category-content');
-        contentDiv.style.display = 'block';
-
-        // Update title
-        document.querySelector('.category-title').textContent = categoryName;
-
-        // Get and display members
-        const members = getMembersByCategory(category);
-        displayMembers(members, category);
-    }
-
-    function displayMembers(members, category) {
-        const memberList = document.querySelector('.member-list');
-        memberList.innerHTML = members.map(member => `
-            <div class="member-card">
-                <button class="remove-btn" onclick="removeMember('${member.id}')">
-                    <i class="fas fa-times"></i>
+    // Add this to your existing JavaScript
+    function initializeSearch() {
+        const searchInput = document.createElement('div');
+        searchInput.className = 'list-controls';
+        searchInput.innerHTML = `
+            <div class="search-input input-group">
+                <input type="text" 
+                       class="form-control" 
+                       placeholder="Search members..."
+                       aria-label="Search members">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
                 </button>
-                <div class="member-info">
-                    <h6>${member.name}</h6>
-                    <span class="role-badge ${member.role.toLowerCase()}">${member.role}</span>
-                </div>
-                <div class="member-status">
-                    ${getStatusBadges(member.status)}
-                </div>
-                <div class="member-actions">
-                    <button class="btn btn-outline-primary btn-sm">
-                        <i class="fas fa-envelope"></i>
-                        <span class="btn-text">Send Forms</span>
-                    </button>
-                    <button class="btn btn-outline-secondary btn-sm">
-                        <i class="fas fa-print"></i>
-                        <span class="btn-text">Print Badge</span>
-                    </button>
-                </div>
             </div>
-        `).join('');
-    }
-
-    // Helper function to generate status badges
-    function getStatusBadges(status) {
-        return `
-            <span class="badge ${status.checkedIn ? 'bg-success' : 'bg-secondary'}">
-                ${status.checkedIn ? 'Checked In' : 'Not Checked In'}
-            </span>
-            <span class="badge ${status.formsComplete ? 'bg-success' : 'bg-warning'}">
-                ${status.formsComplete ? 'Forms Complete' : 'Forms Pending'}
-            </span>
         `;
+        
+        const memberListContainer = document.querySelector('.member-list-container');
+        memberListContainer.parentNode.insertBefore(searchInput, memberListContainer);
     }
-
-    // Back button handler
-    document.querySelector('.back-button').addEventListener('click', function() {
-        document.querySelector('.category-list').style.display = 'block';
-        document.getElementById('category-content').style.display = 'none';
-    });
-
-    // Add member button handler
-    document.querySelector('.add-member-btn').addEventListener('click', function() {
-        addMemberModal.show();
-    });
-
-    // Remove member function
-    window.removeMember = function(memberId) {
-        if (confirm('Are you sure you want to remove this member?')) {
-            // Add removal logic here
-            console.log('Removing member:', memberId);
-        }
-    };
 });
 
 // Toast notification
@@ -422,4 +787,172 @@ function updateThemeIcon(theme) {
         metaThemeColor.setAttribute('content', 
             theme === 'dark' ? '#212529' : '#ffffff');
     }
+}
+
+// Add these new functions
+function showMemberDetails(memberName) {
+    const member = findMemberByName(memberName);
+    if (!member) return;
+
+    const modal = createModal(member);
+    document.body.appendChild(modal);
+    
+    // Show modal with animation
+    setTimeout(() => modal.classList.add('show'), 10);
+}
+
+function findMemberByName(name) {
+    return [...memberData.managers, ...memberData.participants, ...memberData.spectators]
+        .find(m => m.name === name);
+}
+
+function createModal(member) {
+    const modal = document.createElement('div');
+    modal.className = 'member-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>${member.name}</h5>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-primary btn-sm edit-btn" onclick="toggleEdit(this)">
+                        <i class="fas fa-pencil-alt"></i> Edit
+                    </button>
+                    <button type="button" class="btn-close" onclick="closeModal(this)"></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form class="member-details" onsubmit="saveChanges(event, '${member.name}')">
+                    <div class="detail-row">
+                        <span class="detail-label">Role:</span>
+                        <span class="detail-value">${member.details.role}</span>
+                        <select class="form-select detail-input" style="display: none;" disabled>
+                            <option value="Team Manager" ${member.details.role === 'Team Manager' ? 'selected' : ''}>Team Manager</option>
+                            <option value="Participant" ${member.details.role === 'Participant' ? 'selected' : ''}>Participant</option>
+                            <option value="Spectator" ${member.details.role === 'Spectator' ? 'selected' : ''}>Spectator</option>
+                        </select>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Pronouns:</span>
+                        <span class="detail-value">${member.details.pronouns}</span>
+                        <select class="form-select detail-input" style="display: none;" disabled>
+                            <option value="He/him" ${member.details.pronouns === 'He/him' ? 'selected' : ''}>He/him</option>
+                            <option value="She/her" ${member.details.pronouns === 'She/her' ? 'selected' : ''}>She/her</option>
+                            <option value="They/them" ${member.details.pronouns === 'They/them' ? 'selected' : ''}>They/them</option>
+                            <option value="I prefer not to answer" ${member.details.pronouns === 'I prefer not to answer' ? 'selected' : ''}>I prefer not to answer</option>
+                        </select>
+                    </div>
+                    ${member.details.age ? `
+                        <div class="detail-row">
+                            <span class="detail-label">Age:</span>
+                            <span class="detail-value">${member.details.age}</span>
+                            <select class="form-select detail-input" style="display: none;" disabled>
+                                ${Array.from({length: 10}, (_, i) => i + 12).map(age => 
+                                    `<option value="${age} yrs" ${member.details.age === age + ' yrs' ? 'selected' : ''}>${age} yrs</option>`
+                                ).join('')}
+                                <option value="over 18" ${member.details.age === 'over 18' ? 'selected' : ''}>over 18</option>
+                            </select>
+                        </div>
+                    ` : ''}
+                    ${member.details.firstYearDI !== undefined ? `
+                        <div class="detail-row">
+                            <span class="detail-label">First Year of DI:</span>
+                            <span class="detail-value">${member.details.firstYearDI}</span>
+                            <select class="form-select detail-input" style="display: none;" disabled>
+                                <option value="Yes" ${member.details.firstYearDI === 'Yes' ? 'selected' : ''}>Yes</option>
+                                <option value="No" ${member.details.firstYearDI === 'No' ? 'selected' : ''}>No</option>
+                            </select>
+                        </div>
+                    ` : ''}
+                    ${member.details.firstGF !== undefined ? `
+                        <div class="detail-row">
+                            <span class="detail-label">First Global Finals:</span>
+                            <span class="detail-value">${member.details.firstGF}</span>
+                            <select class="form-select detail-input" style="display: none;" disabled>
+                                <option value="Yes" ${member.details.firstGF === 'Yes' ? 'selected' : ''}>Yes</option>
+                                <option value="No" ${member.details.firstGF === 'No' ? 'selected' : ''}>No</option>
+                            </select>
+                        </div>
+                    ` : ''}
+                    <div class="modal-footer" style="display: none;">
+                        <button type="button" class="btn btn-secondary" onclick="cancelEdit(this)">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+    return modal;
+}
+
+function toggleEdit(button) {
+    const modal = button.closest('.member-modal');
+    const form = modal.querySelector('.member-details');
+    const values = form.querySelectorAll('.detail-value');
+    const inputs = form.querySelectorAll('.detail-input');
+    const footer = form.querySelector('.modal-footer');
+    
+    values.forEach(v => v.style.display = 'none');
+    inputs.forEach(input => {
+        input.style.display = 'block';
+        input.disabled = false;
+    });
+    footer.style.display = 'flex';
+    button.style.display = 'none';
+}
+
+function cancelEdit(button) {
+    const modal = button.closest('.member-modal');
+    const form = modal.querySelector('.member-details');
+    const values = form.querySelectorAll('.detail-value');
+    const inputs = form.querySelectorAll('.detail-input');
+    const footer = form.querySelector('.modal-footer');
+    const editBtn = modal.querySelector('.edit-btn');
+    
+    values.forEach(v => v.style.display = 'block');
+    inputs.forEach(input => {
+        input.style.display = 'none';
+        input.disabled = true;
+    });
+    footer.style.display = 'none';
+    editBtn.style.display = 'block';
+}
+
+function saveChanges(event, memberName) {
+    event.preventDefault();
+    const form = event.target;
+    const modal = form.closest('.member-modal');
+    const inputs = form.querySelectorAll('.detail-input');
+    const member = findMemberByName(memberName);
+    
+    inputs.forEach(input => {
+        const row = input.closest('.detail-row');
+        const label = row.querySelector('.detail-label').textContent.slice(0, -1).toLowerCase();
+        const value = input.value;
+        
+        // Update the member data
+        if (label === 'role') {
+            member.details.role = value;
+        } else if (label === 'pronouns') {
+            member.details.pronouns = value;
+        } else if (label === 'age') {
+            member.details.age = value;
+        } else if (label === 'first year of di') {
+            member.details.firstYearDI = value;
+        } else if (label === 'first global finals') {
+            member.details.firstGF = value;
+        }
+        
+        // Update the displayed value
+        const valueSpan = row.querySelector('.detail-value');
+        valueSpan.textContent = value;
+    });
+    
+    // Return to view mode
+    cancelEdit(form.querySelector('.btn-secondary'));
+}
+
+function closeModal(button) {
+    const modal = button.closest('.member-modal');
+    modal.classList.remove('show');
+    setTimeout(() => modal.remove(), 300);
 }
