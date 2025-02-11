@@ -1,6 +1,7 @@
 :root {
     --di-purple: #6f42c1;
     --di-purple-light: #7e57c2;
+    --di-purple-dark: #5a3d9a;
 }
 
 body {
@@ -115,7 +116,7 @@ body {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .nav-tabs-wrapper {
         padding: 0.5rem 0;
         margin: -0.5rem 0 1rem;
@@ -196,7 +197,7 @@ body {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .nav-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -276,7 +277,7 @@ body {
 }
 
 /* Only show mobile navigation on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .mobile-nav-bar {
         display: block;
         position: fixed;
@@ -360,7 +361,7 @@ body {
 }
 
 /* Payment & Forms Table Mobile Optimization */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .table-responsive {
         overflow-x: auto;
     }
@@ -515,7 +516,7 @@ body {
 }
 
 /* Enhanced Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     /* Improve table readability on mobile */
     .table-responsive-stack td {
         display: block;
@@ -620,7 +621,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width:800px) {
     .theme-toggle {
         bottom: 5rem; /* Position above the mobile navigation bar */
         right: 1rem;
@@ -670,7 +671,7 @@ body {
 }
 
 /* Mobile Navigation Enhancements */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     /* Progress Tracker */
     .registration-progress {
         padding: 1rem;
@@ -765,7 +766,7 @@ body {
         display: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
         .mobile-nav-bar {
             display: block;
         }
@@ -823,7 +824,7 @@ body {
 }
 
 /* Improved Typography for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     h1 { font-size: 1.75rem; }
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }
@@ -834,7 +835,7 @@ body {
 }
 
 /* Touch-friendly Form Elements */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     input[type="radio"],
     input[type="checkbox"] {
         width: 1.25rem;
@@ -853,7 +854,7 @@ body {
 }
 
 /* Mobile-friendly Cards */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     /* Stack labels above inputs */
     .form-group, .row {
         display: flex;
@@ -938,7 +939,7 @@ body {
 }
 
 /* Mobile-optimized tables */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .table-mobile-stack td {
         display: grid;
         grid-template-columns: 1fr auto;
@@ -1036,7 +1037,7 @@ body {
 }
 
 /* Mobile-specific fixes for attendees page */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .attendee-card {
         margin: 0.5rem 0;
         padding: 1rem;
@@ -1095,7 +1096,7 @@ body {
     z-index: 1030;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .mobile-nav-bar {
         display: block;
     }
@@ -1192,7 +1193,7 @@ body {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .team-info-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1264,7 +1265,7 @@ body {
 }
 
 /* Mobile Optimization for Buttons */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .section-header .btn-outline-primary {
         padding: 0.25rem 0.5rem;
         font-size: 0.75rem;
@@ -1407,7 +1408,7 @@ body {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .attendee-details,
     .form-details {
         grid-template-columns: 1fr;
@@ -1588,7 +1589,7 @@ body {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .summary-card {
         padding: 1rem;
     }
@@ -1680,11 +1681,12 @@ body {
 }
 
 .content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
+    position: sticky;
+    top: 0;
+    background: var(--bs-body-bg);
+    z-index: 10;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bs-gray-200);
 }
 
 .header-left {
@@ -1707,7 +1709,7 @@ body {
 /* Member List Layout */
 .member-table-header {
     display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 2fr 2.5fr 1fr 1fr;
     gap: 1rem;
     padding: 1rem 1.5rem;
     background: var(--bs-gray-100);
@@ -1717,7 +1719,7 @@ body {
 
 .member-row {
     display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 2fr 2.5fr 1fr 1fr;
     gap: 1rem;
     padding: 1rem 1.5rem;
     align-items: center;
@@ -1748,6 +1750,7 @@ body {
 .form-status {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -1762,7 +1765,7 @@ body {
 .member-actions {
     display: flex;
     gap: 0.5rem;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .action-btn {
@@ -1772,7 +1775,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
 }
 
 .action-btn i {
@@ -1812,7 +1814,7 @@ body {
 }
 
 /* Mobile optimizations for member rows and actions */
-@media (max-width: 768px) {
+    @media (max-width: 800px) {
     .member-row {
         display: flex;
         flex-direction: column;
@@ -1856,10 +1858,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .action-btn i {
-        font-size: 1.125rem;
     }
 
     /* Add visual separation */
@@ -1985,7 +1983,6 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.2;
-    color: var(--bs-gray-900);
 }
 
 .status-label {
@@ -2001,7 +1998,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
 }
 
 .action-btn i {
@@ -2009,7 +2005,7 @@ body {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .status-card {
         padding: 0.875rem;
     }
@@ -2117,7 +2113,7 @@ body {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .modal-content {
         width: 95%;
         margin: 1rem;
@@ -2185,8 +2181,2730 @@ body {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .detail-input {
         max-width: 100%;
     }
 }
+
+/* Desktop View (> 768px) */
+.member-table-view {
+    display: none; /* Hidden by default */
+}
+
+.member-card-view {
+    display: none; /* Hidden by default */
+}
+
+/* Show table view on desktop */
+@media (min-width: 769px) {
+    .member-table-view {
+        display: block;
+    }
+    
+    .member-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .member-row {
+        display: grid;
+        grid-template-columns: 30px 150px 120px 120px 120px 120px 120px 80px;
+        padding: 0.5rem;
+        align-items: center;
+        border-bottom: 1px solid var(--bs-gray-200);
+    }
+
+    .member-row:hover {
+        background-color: var(--bs-gray-100);
+    }
+
+    .member-details {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Quick edit functionality */
+    .editable-field {
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        transition: background-color 0.2s;
+    }
+
+    .editable-field:hover {
+        background-color: var(--bs-gray-200);
+    }
+
+    .form-control-plain,
+    .form-select-plain {
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 0.25rem;
+        width: 100%;
+        transition: all 0.2s ease;
+    }
+
+    .form-control-plain:hover,
+    .form-select-plain:hover {
+        border-color: var(--bs-gray-300);
+        background: var(--bs-white);
+    }
+
+    .form-control-plain:focus,
+    .form-select-plain:focus {
+        border-color: var(--di-purple);
+        background: var(--bs-white);
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+    }
+}
+
+/* Show card view on mobile */
+@media (max-width: 800px) {
+    .member-card-view {
+        display: block;
+    }
+
+    .member-card {
+        background: var(--bs-white);
+        border: none;
+        border-bottom: 1px solid var(--bs-gray-200);
+        border-radius: 0;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .member-card-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .member-info {
+        flex: 1;
+    }
+
+    .member-name {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .member-role {
+        color: var(--bs-gray-600);
+        font-size: 0.875rem;
+    }
+
+    .member-card-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    /* Modal Styles */
+    .modal-fullscreen-sm-down {
+        margin: 0;
+    }
+
+    .modal-fullscreen-sm-down .modal-content {
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .modal-fullscreen-sm-down .modal-header {
+        padding: 1rem;
+        background: var(--bs-gray-100);
+    }
+
+    .modal-fullscreen-sm-down .modal-body {
+        padding: 1.5rem 1rem;
+    }
+
+    .modal-fullscreen-sm-down .modal-footer {
+        padding: 1rem;
+        background: var(--bs-gray-100);
+    }
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] .member-card {
+    background: var(--bs-gray-800);
+    border-color: var(--bs-gray-700);
+}
+
+/* Add these styles to your existing CSS */
+
+.attendees-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Categories Sidebar */
+.categories-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: var(--bs-body-bg);
+    border-radius: 0.75rem;
+    border: 1px solid var(--bs-gray-200);
+    overflow: hidden;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-item:hover {
+    background-color: var(--bs-gray-100);
+}
+
+.category-item.active {
+    background-color: var(--di-purple);
+    color: white;
+}
+
+.category-count {
+    background: var(--bs-gray-200);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.category-item.active .category-count {
+    background: rgba(255, 255, 255, 0.505);
+}
+
+/* Members Content Area */
+.members-content {
+    flex: 1;
+    min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Table Toolbar */
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid var(--bs-gray-300);
+    border-radius: 0.5rem;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bs-gray-500);
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 800px) {
+    .attendees-container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .categories-sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        background: var(--bs-gray-100);
+    }
+
+    .category-item {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Toolbar adjustments */
+    .table-toolbar {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--bs-white);
+        border-bottom: 1px solid var(--bs-gray-200);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .toolbar-right {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    /* Card redesign */
+    .member-card {
+        background: var(--bs-white);
+        border: none;
+        border-bottom: 1px solid var(--bs-gray-200);
+        border-radius: 0;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .member-card-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .member-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    
+    .member-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--bs-gray-900);
+    }
+
+    .member-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .detail-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail-label {
+        font-size: 0.75rem;
+        color: var(--bs-gray-600);
+        margin-bottom: 0.25rem;
+    }
+
+    .detail-value {
+        font-size: 0.875rem;
+        color: var(--bs-gray-900);
+    }
+
+    .member-card-actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+    }
+
+    /* Status badges */
+    .status-badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* Modal improvements */
+    .modal-fullscreen-sm-down {
+        margin: 0;
+    }
+
+    .modal-fullscreen-sm-down .modal-content {
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .modal-fullscreen-sm-down .modal-header {
+        padding: 1rem;
+        background: var(--bs-gray-100);
+    }
+
+    .modal-fullscreen-sm-down .modal-body {
+        padding: 1.5rem 1rem;
+    }
+
+    .modal-fullscreen-sm-down .modal-footer {
+        padding: 1rem;
+        background: var(--bs-gray-100);
+    }
+}
+
+/* Status Summary Cards */
+.status-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.status-card {
+    background: var(--bs-white);
+    border: 1px solid var(--bs-gray-200);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--di-purple-light);
+    color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.status-info {
+    flex: 1;
+}
+
+.status-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.status-label {
+    color: var(--bs-gray-600);
+    font-size: 0.875rem;
+}
+
+/* Add these styles for the desktop table view */
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.member-row {
+    display: grid;
+    grid-template-columns: 30px 150px 120px 120px 120px 120px 120px 80px;
+    padding: 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.member-row:hover {
+    background-color: var(--bs-gray-100);
+}
+
+.member-cell {
+    padding: 0.25rem;
+}
+
+.member-cell input,
+.member-cell select {
+    width: 100%;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.member-cell input:hover,
+.member-cell select:hover {
+    border-color: var(--bs-gray-300);
+    background-color: var(--bs-white);
+}
+
+.member-cell input:focus,
+.member-cell select:focus {
+    border-color: var(--di-purple);
+    background-color: var(--bs-white);
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+.status-badges {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.signed {
+    background-color: var(--bs-success-bg-subtle);
+    color: var(--bs-success);
+}
+
+.status-badge.pending {
+    background-color: var(--bs-warning-bg-subtle);
+    color: var(--bs-warning);
+}
+
+/* Maintain the mobile card view styles as before */
+@media (max-width: 800px) {
+    .member-table-view {
+        display: none;
+    }
+    
+    .member-card-view {
+        display: block;
+    }
+}
+
+/* Refined table styles */
+.table-header {
+    display: grid;
+    grid-template-columns: 30px 150px 120px 120px 120px 120px 120px 80px;
+    padding: 0.75rem 0.5rem;
+    background-color: var(--bs-gray-100);
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-bottom: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-cell {
+    font-weight: 500;
+    color: var(--bs-gray-700);
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure member row cells align with header */
+.member-row {
+    display: grid;
+    grid-template-columns: 30px 150px 120px 120px 120px 120px 120px 80px;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.member-cell {
+    padding: 0 0.5rem;
+}
+
+/* Mobile adjustments */
+    @media (max-width: 800px) {
+    .member-info {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem 1rem;
+    }
+
+    .info-label {
+        font-weight: 500;
+        color: var(--bs-gray-600);
+        font-size: 0.875rem;
+        text-align: left;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+}
+
+/* Ensure form controls align with cells */
+.form-control-plain,
+.form-select-plain {
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+}
+
+/* Improved form controls */
+.form-control-sm, .form-select-sm {
+    height: 31px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+/* Status badge refinements */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Bulk actions bar */
+.bulk-actions-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bs-white);
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.bulk-actions-bar.visible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Animation for save feedback */
+@keyframes saveSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.save-success {
+    animation: saveSuccess 0.3s ease;
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] {
+    .content-header {
+        background: var(--bs-gray-900);
+        border-bottom-color: var(--bs-gray-700);
+    }
+
+    .table-header {
+        background-color: var(--bs-gray-800);
+    }
+
+    .bulk-actions-bar {
+        background: var(--bs-gray-900);
+        border-top: 1px solid var(--bs-gray-700);
+    }
+}
+
+/* Mobile toolbar adjustments */
+@media (max-width: 800px) {
+    /* Fixed top controls */
+    .mobile-controls {
+        position: sticky;
+        top: 0;
+        background: var(--bs-white);
+        z-index: 1020;
+        padding: 1rem;
+        border-bottom: 1px solid var(--bs-gray-200);
+        margin: -1rem -1rem 1rem -1rem; /* Negative margin to span full width */
+    }
+
+    .mobile-controls-top {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .mobile-search {
+        position: relative;
+        grid-column: 1 / -1; /* Span full width */
+    }
+
+    .mobile-search input {
+        width: 100%;
+        padding: 0.5rem 2.25rem;
+        border: 1px solid var(--bs-gray-300);
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .mobile-search i {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--bs-gray-500);
+    }
+
+    .mobile-actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .mobile-actions button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+    }
+
+    /* Adjust content padding to account for fixed header */
+    .members-content {
+        padding-top: 0;
+    }
+
+    /* Hide desktop toolbar */
+    .table-toolbar {
+        display: none;
+    }
+
+    /* Categories adjustments */
+    .categories-sidebar {
+        margin-top: 0;
+        border-radius: 0;
+    }
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] .mobile-controls {
+    background: var(--bs-gray-900);
+    border-bottom-color: var(--bs-gray-700);
+}
+
+/* Mobile Edit Panel Styles */
+.mobile-edit-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bs-white);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+.mobile-edit-panel.active {
+    transform: translateY(0);
+}
+
+.panel-drag-handle {
+    width: 36px;
+    height: 4px;
+    background: var(--bs-gray-300);
+    border-radius: 2px;
+    margin: 0.75rem auto;
+}
+
+.panel-header {
+    padding: 0 1.5rem 1rem;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.panel-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.panel-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--bs-gray-200);
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.edit-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--bs-gray-700);
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-check {
+    display: none;
+}
+
+.btn-check + label {
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1040;
+}
+
+.mobile-edit-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Toast notification styles */
+.toast-notification {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bs-success);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1060;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toast-notification.show {
+    opacity: 1;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] .mobile-edit-panel {
+    background: var(--bs-gray-900);
+}
+
+[data-bs-theme="dark"] .panel-header,
+[data-bs-theme="dark"] .panel-footer {
+    border-color: var(--bs-gray-700);
+}
+
+[data-bs-theme="dark"] .form-group label {
+    color: var(--bs-gray-300);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 800px) {
+    /* Card Layout */
+    .member-card {
+        background: var(--bs-white);
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 1rem;
+        overflow: hidden;
+    }
+
+    /* Header Section */
+    .member-header {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-bottom: 1px solid var(--bs-gray-200);
+    }
+
+    .member-avatar {
+        width: 48px;
+        height: 48px;
+        background: var(--di-purple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    .member-primary {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .member-name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--bs-gray-900);
+    }
+
+    .member-email {
+        font-family: monospace;
+        font-size: 0.875rem;
+        color: var(--bs-gray-600);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Status Badge */
+    .status-badge {
+        padding: 0.375rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        white-space: nowrap;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+        padding: 0.75rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        background: var(--bs-gray-100);
+    }
+
+    .quick-action-btn {
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.375rem;
+        color: var(--bs-gray-700);
+        border-radius: 0.5rem;
+        transition: all 0.2s ease;
+    }
+
+    .quick-action-btn:active {
+        background: var(--bs-gray-200);
+        transform: scale(0.95);
+    }
+
+    .quick-action-btn i {
+        font-size: 1.25rem;
+        color: var(--di-purple);
+    }
+
+    .quick-action-btn span {
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    /* Details Grid */
+    .member-details {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .detail-item {
+        background: var(--bs-gray-100);
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+    }
+
+    .detail-label {
+        font-size: 0.75rem;
+        color: var(--bs-gray-600);
+        margin-bottom: 0.25rem;
+    }
+
+    .detail-value {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--bs-gray-900);
+    }
+
+    /* Edit Panel */
+    .mobile-edit-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--bs-white);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transform: translateY(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
+
+    .mobile-edit-panel.active {
+        transform: translateY(0);
+    }
+
+    .panel-content {
+        padding: 1.5rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--bs-gray-700);
+    }
+
+    .form-control {
+        height: 44px; /* Larger touch target */
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+
+    /* Radio button groups */
+    .btn-group.w-100 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .btn-group .btn {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        background: var(--bs-success);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1060;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toast-notification.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    /* Dark mode support */
+    [data-bs-theme="dark"] {
+        .member-card {
+            background: var(--bs-gray-800);
+        }
+
+        .member-header {
+            border-color: var(--bs-gray-700);
+        }
+
+        .member-name {
+            color: var(--bs-white);
+        }
+
+        .member-email {
+            color: var(--bs-gray-400);
+        }
+
+        .quick-actions,
+        .detail-item {
+            background: var(--bs-gray-900);
+        }
+
+        .quick-action-btn {
+            color: var(--bs-gray-300);
+        }
+
+        .detail-value {
+            color: var(--bs-white);
+        }
+
+        .mobile-edit-panel {
+            background: var(--bs-gray-900);
+        }
+    }
+}
+
+/* Update desktop action buttons styling */
+.member-cell.actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 120px; /* Ensure enough space for buttons */
+}
+
+.member-cell.actions .btn {
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+/* Fix layout issues at specific breakpoints */
+@media (max-width: 1200px) {
+    .table-header,
+    .member-row {
+        grid-template-columns: 
+            30px    /* checkbox */
+            minmax(120px, 1fr)   /* name */
+            minmax(150px, 1fr)   /* email */
+            minmax(100px, 1fr)   /* pronouns */
+            minmax(100px, 1fr)   /* first year DI */
+            minmax(100px, 1fr)   /* first GF */
+            minmax(80px, 1fr)    /* status */
+            120px;  /* actions */
+    }
+}
+
+/* Add responsive handling for medium screens */
+@media (max-width: 992px) {
+    .table-header,
+    .member-row {
+        font-size: 0.875rem;
+    }
+
+    .member-cell.actions {
+        min-width: 100px;
+    }
+
+    .member-cell.actions .btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Add specific breakpoint handling */
+@media (min-width: 877px) and (max-width: 1607px) {
+    .table-header,
+    .member-row {
+        grid-template-columns: 
+            30px    /* checkbox */
+            minmax(120px, 140px)   /* name */
+            minmax(150px, 180px)   /* email */
+            minmax(100px, 120px)   /* pronouns */
+            minmax(100px, 120px)   /* first year DI */
+            minmax(100px, 120px)   /* first GF */
+            minmax(80px, 100px)    /* status */
+            120px;  /* actions */
+    }
+
+    .member-cell {
+        padding: 0.25rem;
+    }
+
+    .form-control-plain,
+    .form-select-plain {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.375rem;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Add horizontal scroll for very narrow windows */
+@media (max-width: 1200px) {
+    .member-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-header,
+    .member-row {
+        min-width: 900px; /* Ensure minimum width to prevent squishing */
+    }
+}
+
+/* Ensure edit panel is visible and properly positioned */
+.mobile-edit-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bs-white);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+
+.mobile-edit-panel.active {
+    transform: translateY(0);
+}
+
+.mobile-edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1040;
+}
+
+.mobile-edit-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Add these styles to fix the layout */
+.member-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.table-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Remove any bottom margin/padding that might create space */
+.container {
+    padding-bottom: 0;
+}
+
+/* Ensure the footer stays at the bottom without extra space */
+.footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Hide the duplicate bottom section on desktop */
+@media (min-width: 769px) {
+    .member-info-bottom {
+        display: none;
+    }
+}
+
+/* Role selector styling */
+.form-select {
+    height: 44px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--bs-gray-300);
+    background-color: var(--bs-white);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: var(--di-purple);
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+}
+
+/* Improve form group spacing */
+.edit-section {
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin: 0;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--bs-gray-700);
+    font-weight: 500;
+}
+
+/* Improve button group styling */
+.btn-group.w-100 {
+    gap: 0.75rem;
+}
+
+.btn-group .btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] {
+    .form-select {
+        background-color: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+        color: var(--bs-white);
+    }
+
+    .form-select:focus {
+        border-color: var(--di-purple);
+        box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+    }
+
+    .form-group label {
+        color: var(--bs-gray-300);
+    }
+}
+
+/* Update grid layout for desktop view */
+.table-header,
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        40px    /* checkbox */
+        180px   /* name */
+        200px   /* email */
+        120px   /* role */
+        120px   /* pronouns */
+        120px   /* first year DI */
+        120px   /* first GF */
+        100px   /* status */
+        160px;  /* actions */
+    gap: 0.75rem;
+    padding: 0.75rem;
+    align-items: center;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+/* Header styling */
+.header-cell {
+    font-weight: 600;
+    color: var(--bs-gray-700);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Cell styling */
+.member-cell {
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+    font-size: 0.875rem;
+}
+
+/* Form controls */
+.form-control-plain,
+.form-select-plain {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+/* Status badge */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+/* Action buttons */
+.member-cell.actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.member-cell.actions .btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .table-header,
+    .member-row {
+        grid-template-columns: 
+            40px    /* checkbox */
+            minmax(140px, 1fr)   /* name */
+            minmax(160px, 1fr)   /* email */
+            minmax(100px, 1fr)   /* role */
+            minmax(100px, 1fr)   /* pronouns */
+            minmax(100px, 1fr)   /* first year DI */
+            minmax(100px, 1fr)   /* first GF */
+            minmax(90px, 1fr)    /* status */
+            120px;  /* actions */
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Table container */
+.member-table {
+    background: var(--bs-white);
+    border: 1px solid var(--bs-gray-200);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-body {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] {
+    .member-table {
+        background: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+    }
+
+    .table-header,
+    .member-row {
+        border-color: var(--bs-gray-700);
+    }
+
+    .header-cell {
+        color: var(--bs-gray-200);
+    }
+}
+
+/* Fix dark mode text colors */
+[data-bs-theme="dark"] {
+    /* Card text colors */
+    .card-text, 
+    .form-count {
+        color: var(--bs-gray-300);
+    }
+
+    /* Fix checkbox styling */
+    .form-check-input {
+        background-color: var(--bs-gray-700);
+        border-color: var(--bs-gray-600);
+    }
+
+    .form-check-input:checked {
+        background-color: var(--di-purple);
+        border-color: var(--di-purple);
+    }
+}
+
+/* Fix table header scrolling */
+.member-table {
+    position: relative;
+}
+
+#mainTableHeader {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bs-white);
+    border-bottom: 2px solid var(--bs-gray-200);
+}
+
+/* Improve table layout */
+.table-header,
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        40px    /* checkbox */
+        minmax(150px, 1fr)   /* name */
+        minmax(180px, 1fr)   /* email */
+        minmax(120px, 1fr)   /* role */
+        minmax(120px, 1fr)   /* pronouns */
+        minmax(120px, 1fr)   /* first year DI */
+        minmax(120px, 1fr)   /* first GF */
+        minmax(100px, 1fr)   /* status */
+        140px;  /* actions */
+    gap: 0.5rem;
+    padding: 0.75rem;
+    align-items: center;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+/* Dark mode table header */
+[data-bs-theme="dark"] {
+    #mainTableHeader {
+        background: var(--bs-gray-900);
+        border-bottom-color: var(--bs-gray-700);
+    }
+
+    .header-cell {
+        color: var(--bs-gray-200);
+    }
+
+    /* Fix form count text */
+    .card {
+        .form-count {
+            color: var(--bs-gray-300);
+        }
+    }
+
+    /* Improve checkbox contrast */
+    .form-check-input {
+        &:not(:checked) {
+            background-color: var(--bs-gray-700);
+            border-color: var(--bs-gray-500);
+        }
+
+        &:checked {
+            background-color: var(--di-purple);
+            border-color: var(--di-purple);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+        }
+    }
+}
+
+/* Improve table responsiveness */
+@media (max-width: 1400px) {
+    .table-header,
+    .member-row {
+        grid-template-columns: 
+            40px    /* checkbox */
+            minmax(140px, 1fr)   /* name */
+            minmax(160px, 1fr)   /* email */
+            minmax(100px, 1fr)   /* role */
+            minmax(100px, 1fr)   /* pronouns */
+            minmax(100px, 1fr)   /* first year DI */
+            minmax(100px, 1fr)   /* first GF */
+            minmax(90px, 1fr)    /* status */
+            120px;  /* actions */
+    }
+
+    .member-cell {
+        font-size: 0.875rem;
+    }
+}
+
+/* Improve table scrolling */
+.table-body {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+}
+
+/* Ensure proper form count visibility */
+.card-body {
+    .form-count {
+        font-weight: 500;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.375rem;
+        background-color: var(--bs-gray-100);
+    }
+}
+
+[data-bs-theme="dark"] .card-body .form-count {
+    background-color: var(--bs-gray-800);
+}
+
+/* Table container with horizontal scroll */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    background: var(--bs-white);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Fixed header styles */
+.table-header {
+    display: grid;
+    grid-template-columns: 
+        40px    /* checkbox */
+        180px   /* name */
+        200px   /* email */
+        120px   /* first year DI */
+        120px   /* first GF */
+        120px   /* DI Alum */
+        120px;  /* status */
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--bs-white);
+    border-bottom: 1px solid var(--bs-gray-200);
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.header-cell {
+    font-weight: 600;
+    color: var(--bs-gray-700);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+/* Checkbox styles */
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border: 2px solid var(--bs-gray-400);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.form-check-input:checked {
+    background-color: var(--di-purple);
+    border-color: var(--di-purple);
+}
+
+.form-check-input:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+/* Card counter styles */
+.card-counter {
+    color: var(--bs-gray-700);
+    background: var(--bs-gray-100);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Dark mode improvements */
+[data-bs-theme="dark"] {
+    .table-container {
+        background: var(--bs-gray-800);
+    }
+
+    .table-header {
+        background: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+    }
+
+    .header-cell {
+        color: var(--bs-gray-200);
+    }
+
+    .form-check-input {
+        border-color: var(--bs-gray-600);
+        background-color: var(--bs-gray-700);
+    }
+
+    .form-check-input:checked {
+        background-color: var(--di-purple);
+        border-color: var(--di-purple);
+    }
+
+    .card-counter {
+        color: var(--bs-gray-200);
+        background: var(--bs-gray-700);
+    }
+
+    /* Fix text colors in cards */
+    .card {
+        background: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+    }
+
+    .card-title,
+    .card-text,
+    .counter-text {
+        color: var(--bs-gray-200);
+    }
+
+    .counter-number {
+        color: var(--bs-white);
+    }
+
+    /* Form control dark mode */
+    .form-control,
+    .form-select {
+        background-color: var(--bs-gray-900);
+        border-color: var(--bs-gray-700);
+        color: var(--bs-gray-200);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--di-purple);
+        box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.25);
+    }
+
+    /* Status badge dark mode */
+    .status-badge {
+        &.active {
+            background-color: rgba(25, 135, 84, 0.2);
+            color: #28a745;
+        }
+        &.pending {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+        &.inactive {
+            background-color: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+        }
+    }
+}
+
+/* Member row styles */
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        40px    /* checkbox */
+        180px   /* name */
+        200px   /* email */
+        120px   /* first year DI */
+        120px   /* first GF */
+        120px   /* DI Alum */
+        120px;  /* status */
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--bs-gray-100);
+    transition: background-color 0.2s ease;
+}
+
+.member-row:hover {
+    background-color: var(--bs-gray-50);
+}
+
+[data-bs-theme="dark"] .member-row:hover {
+    background-color: var(--bs-gray-700);
+}
+
+/* Ensure content stays within cells */
+.cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .table-container {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+}
+
+/* Counter styles with dark mode fixes */
+.counter-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.counter-section .card {
+    flex: 1;
+    border-radius: 0.75rem;
+}
+
+.counter-content {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.counter-number {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--bs-gray-900);
+}
+
+.counter-text {
+    font-size: 0.875rem;
+    color: var(--bs-gray-600);
+}
+
+/* Dark mode specific counter styles */
+[data-bs-theme="dark"] {
+    .counter-section .card {
+        background: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+    }
+
+    .card-title {
+        color: var(--bs-gray-200);
+    }
+
+    .counter-number {
+        color: var(--bs-gray-200);
+    }
+
+    .counter-text {
+        color: var(--bs-gray-400);
+    }
+}
+
+/* Table container with proper scrolling */
+.table-wrapper {
+    position: relative;
+    margin: 1rem 0;
+    border-radius: 0.75rem;
+    background: var(--bs-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table-scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.table-container {
+    min-width: 900px;
+}
+
+/* Clear any potential duplicate styles */
+.table-footer,
+.bottom-header {
+    display: none;
+}
+
+/* Card Layout Improvements */
+.counter-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.counter-section .card {
+    border: none;
+    border-radius: 1rem;
+    background: var(--bs-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 
+                0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.counter-section .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 
+                0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-gray-600);
+    margin-bottom: 0.75rem;
+}
+
+.counter-content {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--di-purple);
+    letter-spacing: -0.02em;
+}
+
+.counter-text {
+    font-size: 1rem;
+    color: var(--bs-gray-600);
+    font-weight: 500;
+}
+
+/* Table Styling Improvements */
+.table-wrapper {
+    background: var(--bs-white);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 
+                0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.table-header {
+    background: var(--bs-gray-50);
+    border-bottom: 2px solid var(--bs-gray-200);
+    padding: 1rem 1.5rem;
+}
+
+.header-cell {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--bs-gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.member-row {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--bs-gray-100);
+    transition: background-color 0.15s ease;
+}
+
+.member-row:hover {
+    background-color: var(--bs-gray-50);
+}
+
+/* Form Controls */
+.form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--bs-gray-400);
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.form-check-input:checked {
+    background-color: var(--di-purple);
+    border-color: var(--di-purple);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.status-badge::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.8;
+}
+
+/* Dark Mode Refinements */
+[data-bs-theme="dark"] {
+    .counter-section .card {
+        background: var(--bs-gray-800);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
+                    0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .counter-number {
+        color: var(--di-purple-light);
+    }
+
+    .table-wrapper {
+        background: var(--bs-gray-800);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
+                    0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .table-header {
+        background: var(--bs-gray-900);
+        border-color: var(--bs-gray-700);
+    }
+
+    .header-cell {
+        color: var(--bs-gray-200);
+    }
+
+    .member-row {
+        border-color: var(--bs-gray-700);
+    }
+
+    .member-row:hover {
+        background-color: var(--bs-gray-700);
+    }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1200px) {
+    .counter-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1199px) {
+    .counter-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Enhanced Table Layout */
+.table-wrapper {
+    background: var(--bs-white);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Member Row Layout */
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        40px    /* checkbox */
+        60px    /* team number */
+        250px   /* name & email */
+        100px   /* pronouns */
+        120px   /* role */
+        100px   /* first year DI */
+        100px   /* first GF */
+        100px   /* DI Alum */
+        120px;  /* status */
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--bs-gray-100);
+    min-width: max-content;
+}
+
+/* Name and Email Cell */
+.name-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.member-name {
+    font-weight: 500;
+    color: var(--bs-gray-900);
+}
+
+.member-email {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--bs-gray-600);
+}
+
+.email-actions {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.member-row:hover .email-actions {
+    opacity: 1;
+}
+
+/* Action Icons */
+.action-icon {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: var(--bs-gray-600);
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+}
+
+.action-icon:hover {
+    color: var(--di-purple);
+    background: var(--bs-gray-100);
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    min-width: 300px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1060;
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+}
+
+.toast-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--bs-gray-100);
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.toast-body {
+    padding: 0.75rem 1rem;
+}
+
+.toast-success {
+    border-left: 4px solid var(--bs-success);
+}
+
+.toast-error {
+    border-left: 4px solid var(--bs-danger);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Refinements */
+[data-bs-theme="dark"] {
+    .member-name {
+        color: var(--bs-gray-200);
+    }
+
+    .member-email {
+        color: var(--bs-gray-400);
+    }
+
+    .action-icon {
+        color: var(--bs-gray-400);
+    }
+
+    .action-icon:hover {
+        color: var(--di-purple-light);
+        background: var(--bs-gray-700);
+    }
+
+    .toast {
+        background: var(--bs-gray-800);
+    }
+
+    .toast-header {
+        background: var(--bs-gray-900);
+        border-color: var(--bs-gray-700);
+        color: var(--bs-gray-200);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1400px) {
+    .member-row {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .table-wrapper {
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+}
+
+/* Table Layout */
+.table-wrapper {
+    background: var(--bs-white);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Grid Layout */
+.table-header,
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        180px   /* name */
+        220px   /* email */
+        110px   /* first year DI */
+        110px   /* first GF */
+        110px   /* DI Alum */
+        100px   /* signed */
+        120px;  /* status */
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    min-width: max-content;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.signed {
+    background-color: var(--bs-success-bg-subtle);
+    color: var(--bs-success);
+}
+
+.status-badge.pending {
+    background-color: var(--bs-warning-bg-subtle);
+    color: var(--bs-warning);
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background-color: currentColor;
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .status-badge.signed {
+        background-color: rgba(25, 135, 84, 0.2);
+        color: #28a745;
+    }
+
+    .status-badge.pending {
+        background-color: rgba(255, 193, 7, 0.2);
+        color: #ffc107;
+    }
+}
+
+/* Rest of your existing styles... */
+
+/* Desktop Layout */
+.table-header,
+.member-row {
+    display: grid;
+    grid-template-columns: 
+        180px   /* name */
+        220px   /* email */
+        110px   /* first year DI */
+        110px   /* first GF */
+        110px   /* DI Alum */
+        100px;  /* signed */
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    min-width: max-content;
+}
+
+/* Mobile Layout */
+.mobile-member-row {
+    display: none;
+    padding: 1rem;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.mobile-member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.mobile-member-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.mobile-member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-field label {
+    font-size: 0.875rem;
+    color: var(--bs-gray-600);
+    font-weight: 500;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+    .table-header,
+    .member-row {
+        display: none;
+    }
+
+    .mobile-member-row {
+        display: block;
+    }
+
+    .table-wrapper {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .mobile-field .email-input-wrapper {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .mobile-field .email-input {
+        flex: 1;
+    }
+
+    .mobile-field .email-actions {
+        display: flex;
+        gap: 0.25rem;
+    }
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .mobile-member-row {
+        border-color: var(--bs-gray-700);
+    }
+
+    .mobile-field label {
+        color: var(--bs-gray-400);
+    }
+}
+
+/* Rest of your existing styles... */
+
+/* Status Select Styling */
+.status-select {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--bs-gray-300);
+    background-color: var(--bs-white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.status-select:hover {
+    border-color: var(--bs-gray-400);
+}
+
+.status-select:focus {
+    border-color: var(--di-purple);
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+    outline: none;
+}
+
+/* Status Select Options */
+.status-select option[value="registered"] {
+    color: var(--bs-success);
+}
+
+.status-select option[value="pending"] {
+    color: var(--bs-warning);
+}
+
+.status-select option[value="completed"] {
+    color: var(--bs-info);
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .status-select {
+        background-color: var(--bs-gray-800);
+        border-color: var(--bs-gray-600);
+        color: var(--bs-gray-200);
+    }
+
+    .status-select:hover {
+        border-color: var(--bs-gray-500);
+    }
+
+    .status-select:focus {
+        border-color: var(--di-purple-light);
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.4);
+    }
+}
+
+/* Rest of your existing styles... */
+
+/* Status Badge Styling */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background-color: currentColor;
+}
+
+.status-badge.signed {
+    background-color: var(--bs-success-bg-subtle);
+    color: var(--bs-success);
+}
+
+.status-badge.pending {
+    background-color: var(--bs-warning-bg-subtle);
+    color: var(--bs-warning);
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .status-badge.signed {
+        background-color: rgba(25, 135, 84, 0.2);
+        color: #28a745;
+    }
+
+    .status-badge.pending {
+        background-color: rgba(255, 193, 7, 0.2);
+        color: #ffc107;
+    }
+}
+
+/* Rest of your existing styles... */
+
+/* Checkbox and Name Styling */
+.name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.form-check-input.member-check {
+    margin: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+    border: 1.5px solid var(--bs-gray-400);
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.form-check-input.member-check:checked {
+    background-color: var(--di-purple);
+    border-color: var(--di-purple);
+}
+
+.form-check-input.member-check:hover:not(:checked) {
+    border-color: var(--di-purple);
+}
+
+.form-check-input.member-check:focus {
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+    border-color: var(--di-purple);
+}
+
+/* Mobile Adjustments */
+.mobile-member-header .name-wrapper {
+    flex: 1;
+    min-width: 0; /* Allows text truncation */
+}
+
+.mobile-member-header .mobile-member-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .form-check-input.member-check {
+        border-color: var(--bs-gray-600);
+        background-color: var(--bs-gray-800);
+    }
+
+    .form-check-input.member-check:checked {
+        background-color: var(--di-purple-light);
+        border-color: var(--di-purple-light);
+    }
+
+    .form-check-input.member-check:hover:not(:checked) {
+        border-color: var(--di-purple-light);
+    }
+
+    .form-check-input.member-check:focus {
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.4);
+        border-color: var(--di-purple-light);
+    }
+}
+
+/* Rest of your existing styles... */
+
+/* Section Tabs */
+.section-tabs {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 2px solid var(--bs-gray-200);
+    margin-bottom: 1rem;
+    background: var(--bs-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: none;
+    color: var(--bs-gray-600);
+    font-weight: 500;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    color: var(--di-purple);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--di-purple);
+}
+
+/* Quick Edit Styles */
+.editable-cell {
+    position: relative;
+    cursor: pointer;
+}
+
+.editable-cell:hover::after {
+    content: '✎';
+    position: absolute;
+    right: 8px;
+    color: var(--di-purple);
+    opacity: 0.5;
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 250px;
+    z-index: 1000;
+    background: var(--bs-white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Form Validation */
+.is-invalid {
+    border-color: var(--bs-danger) !important;
+}
+
+.invalid-feedback {
+    display: block;
+    color: var(--bs-danger);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Dark Mode Support */
+[data-bs-theme="dark"] {
+    .section-tabs {
+        background: var(--bs-gray-800);
+        border-color: var(--bs-gray-700);
+    }
+    
+    .tab-btn {
+        color: var(--bs-gray-400);
+    }
+    
+    .tab-btn.active {
+        color: var(--di-purple-light);
+    }
+    
+    .toast {
+        background: var(--bs-gray-800);
+        border: 1px solid var(--bs-gray-700);
+    }
+}
+
+/* Warning Messages */
+.warning-message {
+    background: var(--bs-warning-bg-subtle);
+    border: 1px solid var(--bs-warning-border-subtle);
+    color: var(--bs-warning-text);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+/* Mobile Field Styling */
+.mobile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.mobile-field:last-child {
+    border-bottom: none;
+}
+
+.mobile-field label {
+    font-size: 0.875rem;
+    color: var(--bs-gray-600);
+    font-weight: 500;
+}
+
+.mobile-field select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--bs-gray-300);
+    background-color: var(--bs-white);
+}
+
+/* Dark Mode Adjustments */
+[data-bs-theme="dark"] {
+    .mobile-field {
+        border-color: var(--bs-gray-700);
+    }
+
+    .mobile-field label {
+        color: var(--bs-gray-400);
+    }
+
+    .mobile-field select {
+        background-color: var(--bs-gray-800);
+        border-color: var(--bs-gray-600);
+        color: var(--bs-gray-200);
+    }
+}
+
+/* Toast Notification Styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bs-white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 200px;
+    max-width: 90%;
+    text-align: center;
+    animation: slideUp 0.3s ease-out;
+}
+
+.toast.success {
+    background: var(--bs-success);
+    color: white;
+}
+
+.toast.error {
+    background: var(--bs-danger);
+    color: white;
+}
+
+.toast.info {
+    background: var(--bs-info);
+    color: white;
+}
+
+/* Toast Animation */
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Support */
+[data-bs-theme="dark"] .toast {
+    background: var(--bs-gray-800);
+    color: var(--bs-white);
+}
+
